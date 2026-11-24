@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Velari Academia Bosa</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Academia de belleza en Bosa, Bogotá. Barbería y Manicure y Pedicure desde cero. Tu primera clase es gratis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: una columna en celular, hero con logo y dos arcos de fotos, secciones con filete dorado; marca azul rey y oro, un solo look */
+:root{
+  --bg:#030a52;
+  --bg-2:#071478;
+  --bg-3:#0a1c9c;
+  --panel:rgba(255,255,255,.06);
+  --line:rgba(227,185,95,.38);
+  --gold:#e3b95f;
+  --gold-hi:#fbe9b0;
+  --gold-lo:#a8781f;
+  --ink-on-gold:#05124f;
+  --text:#f3f5ff;
+  --muted:#b4bcec;
+  --ok:#2fd27a;
+  --display:"Cinzel",Georgia,serif;
+  --accent:"Cormorant Garamond",Georgia,serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--text);font:400 16px/1.55 var(--body);
+  background-image:radial-gradient(900px 600px at 50% -10%,var(--bg-3) 0%,transparent 70%),radial-gradient(700px 500px at 100% 40%,rgba(10,28,156,.55) 0%,transparent 70%);
+  background-attachment:scroll;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:0 96px;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1080px;margin-inline:auto}
+.gold-text{background:linear-gradient(180deg,var(--gold-hi) 0%,var(--gold) 52%,var(--gold-lo) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow{font:600 12px/1 var(--body);letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+h1,h2,h3{margin:0;text-wrap:balance}
+h2{font:700 clamp(26px,5.2vw,40px)/1.1 var(--display);letter-spacing:.03em}
+.lead{color:var(--muted);max-width:60ch}
+section{padding-block:56px 8px}
+.sec-head{display:grid;gap:14px;margin-bottom:28px}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);border:0;margin:0}
+
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 26px;border-radius:999px;text-decoration:none;font:700 16px/1 var(--body);letter-spacing:.02em;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;border:1.5px solid transparent;cursor:pointer}
+.btn:focus-visible{outline:3px solid var(--gold-hi);outline-offset:3px}
+.btn-gold{background:linear-gradient(180deg,var(--gold-hi),var(--gold) 55%,#c9973a);color:var(--ink-on-gold);box-shadow:0 10px 30px rgba(227,185,95,.28)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(227,185,95,.4)}
+.btn-line{border-color:var(--line);color:var(--gold-hi);background:rgba(3,10,82,.4)}
+.btn-line:hover{background:rgba(227,185,95,.12);transform:translateY(-2px)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* HERO */
+.hero{padding-block:max(28px,env(safe-area-inset-top,0px)) 24px;text-align:center;position:relative}
+.topbar{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;font:600 12px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-hi);background:rgba(3,10,82,.55)}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px rgba(47,210,122,.18)}
+.logo{width:min(360px,72vw);height:auto;margin:10px auto 14px;filter:drop-shadow(0 14px 30px rgba(0,0,0,.45))}
+.slogan{font:italic 600 clamp(26px,6vw,44px)/1.1 var(--accent);color:var(--text);margin:6px 0 10px}
+.sub{font:600 13px/1.5 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:26px 0 8px}
+.free-note{color:var(--muted);font-size:14px;margin:10px 0 0}
+
+.arches{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;max-width:640px;margin:34px auto 0}
+.arch{position:relative;border-radius:999px 999px 18px 18px;overflow:hidden;border:1.5px solid var(--gold);aspect-ratio:3/4;background:var(--bg-2)}
+.arch img{width:100%;height:100%;object-fit:cover}
+.arch::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(3,10,82,.92))}
+.arch span{position:absolute;left:0;right:0;bottom:16px;z-index:1;font:700 14px/1 var(--display);letter-spacing:.18em;text-transform:uppercase;color:var(--gold-hi)}
+.arch:nth-child(2){margin-top:28px}
+
+/* PROGRAMAS */
+.progs{display:grid;gap:22px;grid-template-columns:minmax(0,1fr)}
+.prog{display:grid;grid-template-columns:minmax(0,1fr);gap:0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02))}
+.prog img{width:100%;height:auto;aspect-ratio:1199/1312;object-fit:cover}
+.prog-body{padding:22px 22px 26px;display:grid;gap:14px;align-content:start}
+.prog h3{font:700 24px/1.1 var(--display);letter-spacing:.03em}
+.ticks{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.ticks li{display:flex;gap:11px;align-items:flex-start;color:var(--text)}
+.ticks li::before{content:"";flex:none;width:18px;height:18px;margin-top:2px;border-radius:50%;background:linear-gradient(180deg,var(--gold-hi),var(--gold-lo));-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M9.5 16.2 5.3 12l-1.4 1.4 5.6 5.6L20.6 7.9l-1.4-1.4z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M9.5 16.2 5.3 12l-1.4 1.4 5.6 5.6L20.6 7.9l-1.4-1.4z'/%3E%3C/svg%3E") center/contain no-repeat}
+.meta{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:7px 12px;border-radius:999px;background:var(--panel);border:1px solid rgba(255,255,255,.12);font:600 13px/1 var(--body);color:var(--muted)}
+
+/* PRECIOS */
+.plans{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+.plan{border:1px solid var(--line);border-radius:20px;padding:24px;background:var(--panel);display:grid;gap:10px;align-content:start;position:relative}
+.plan.hl{background:linear-gradient(180deg,rgba(251,233,176,.16),rgba(227,185,95,.06));border-color:var(--gold)}
+.tag{position:absolute;top:-13px;left:22px;padding:6px 12px;border-radius:999px;background:linear-gradient(180deg,var(--gold-hi),var(--gold));color:var(--ink-on-gold);font:700 11px/1 var(--body);letter-spacing:.12em;text-transform:uppercase}
+.plan h3{font:700 19px/1.15 var(--display);letter-spacing:.04em}
+.plan .when{color:var(--muted);font-size:14px}
+.price{font:700 40px/1 var(--display);font-variant-numeric:tabular-nums}
+.price small{font:500 14px/1 var(--body);color:var(--muted);letter-spacing:0}
+.mat{display:flex;justify-content:space-between;gap:10px;border-top:1px solid rgba(255,255,255,.12);padding-top:12px;font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.mat b{color:var(--text)}
+.clear{margin-top:22px;padding:18px 20px;border-radius:16px;border:1px dashed var(--line);color:var(--text);background:rgba(3,10,82,.5)}
+.clear b{color:var(--gold-hi)}
+.extras{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+
+/* PASOS */
+.steps{display:grid;gap:16px;grid-template-columns:minmax(0,1fr);counter-reset:s}
+.step{display:flex;gap:18px;align-items:flex-start;padding:20px;border-radius:18px;background:var(--panel);border:1px solid rgba(255,255,255,.1)}
+.step::before{counter-increment:s;content:counter(s);flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font:700 20px/1 var(--display);color:var(--ink-on-gold);background:linear-gradient(180deg,var(--gold-hi),var(--gold))}
+.step h3{font:700 17px/1.2 var(--display);letter-spacing:.04em;margin-bottom:4px}
+.step p{margin:0;color:var(--muted)}
+
+/* SEDE */
+.sede{display:grid;gap:22px;grid-template-columns:minmax(0,1fr);align-items:center}
+.sede img{height:auto;border-radius:22px;border:1px solid var(--line);width:100%;max-height:560px;object-fit:cover}
+.info{display:grid;gap:16px}
+.row{display:flex;gap:14px;align-items:flex-start}
+.row svg{width:24px;height:24px;flex:none;color:var(--gold);margin-top:2px}
+.row b{display:block;color:var(--gold-hi);font:600 12px/1 var(--body);letter-spacing:.22em;text-transform:uppercase;margin-bottom:6px}
+.gratis-img{height:auto;border-radius:22px;border:1px solid var(--line);margin-top:28px}
+
+/* REDES */
+.socials{display:flex;flex-wrap:wrap;gap:12px}
+.social{flex:1 1 200px;display:flex;flex-direction:column;gap:4px;padding:18px 20px;border-radius:18px;border:1px solid var(--line);background:var(--panel);text-decoration:none;transition:transform .15s ease,background .15s ease}
+.social:hover{transform:translateY(-2px);background:rgba(227,185,95,.1)}
+.social b{font:700 16px/1.2 var(--display);letter-spacing:.05em;color:var(--gold-hi)}
+.social span{color:var(--muted);font-size:14px;overflow-wrap:anywhere}
+
+/* PIE */
+footer{margin-top:56px;padding-block:34px 10px;text-align:center;color:var(--muted);font-size:13px}
+footer .f-logo{width:150px;margin:0 auto 14px;opacity:.95}
+footer p{margin:4px 0}
+
+/* BARRA FIJA */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;justify-content:center;padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:linear-gradient(180deg,transparent,rgba(3,10,82,.94) 40%)}
+.dock .btn{width:100%;max-width:520px;box-shadow:0 12px 34px rgba(0,0,0,.45),0 10px 30px rgba(227,185,95,.3)}
+
+@media (min-width:760px){
+  body{padding-block:0 110px}
+  .progs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .plans{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .step{flex-direction:column}
+  .sede{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:44px}
+  section{padding-block:80px 8px}
+  .arches{gap:22px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="topbar">
+      <span class="pill"><i></i>Sede Bosa · Abierto todos los días</span>
+    </div>
+    <img class="logo" src="assets/logo.png" alt="Velari, formación, belleza, futuro" width="360" height="326">
+    <h1 class="slogan">Aprende, trabaja y cumple tus sueños</h1>
+    <div class="sub">Barbería · Manicure y Pedicure</div>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="https://wa.me/573138855754?text=Hola%2C%20quiero%20agendar%20mi%20primera%20clase%20GRATIS%20en%20Velari%20Bosa" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.200Zm4.500-6.100c-.2-.1-1.500-.7-1.700-.8s-.4-.1-.6.100-.7.800-.8 1-.3.200-.5.100a6.700 6.700 0 0 1-3.300-2.900c-.2-.4.200-.4.700-1.300.1-.2 0-.3 0-.4l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.300 3 3 0 0 0-.9 2.200 5.200 5.200 0 0 0 1.100 2.700 11.900 11.900 0 0 0 4.600 4c1.700.7 2.400.8 3.200.7a2.700 2.700 0 0 0 1.800-1.300 2.200 2.200 0 0 0 .2-1.300c-.1-.1-.2-.2-.5-.3Z"/></svg>
+        Agenda tu clase GRATIS
+      </a>
+      <a class="btn btn-line" href="#sede">Cómo llegar</a>
+    </div>
+    <p class="free-note">Sin compromiso. Vienes, conoces la sede y practicas con nosotros.</p>
+
+    <div class="arches" aria-hidden="false">
+      <figure class="arch" style="margin:0"><img src="assets/hero-barberia.jpg" alt="Estudiante de barbería de Velari con uniforme azul rey cortando el cabello" width="560" height="720"><span>Barbería</span></figure>
+      <figure class="arch" style="margin:0"><img src="assets/hero-unas.jpg" alt="Estudiante de manicure de Velari mostrando uñas decoradas con detalles dorados" width="560" height="720"><span>Manicure</span></figure>
+    </div>
+  </header>
+
+  <hr class="rule">
+
+  <section id="programas">
+    <div class="sec-head">
+      <div class="eyebrow">Nuestros programas</div>
+      <h2 class="gold-text">Aprende un oficio con el que puedes trabajar</h2>
+      <p class="lead">Formación desde cero con 95% de práctica en clientes reales. Certificado, uniforme de regalo y acompañamiento de tus profes en cada paso.</p>
+    </div>
+
+    <div class="progs">
+      <article class="prog">
+        <img src="assets/barberia.jpg" alt="Programa de Barbería en Velari: conviértete en un barbero profesional" width="720" height="788" loading="lazy">
+        <div class="prog-body">
+          <h3 class="gold-text">Barbería</h3>
+          <ul class="ticks">
+            <li>Corte masculino y degradados</li>
+            <li>Diseño de barba y perfilado</li>
+            <li>Técnicas avanzadas de barbería</li>
+            <li>Asesoría en productos y estilismo</li>
+          </ul>
+          <div class="meta"><span class="chip">5 a 8 meses con 2 clases por semana</span><span class="chip">Clases de 4 horas</span></div>
+          <a class="btn btn-gold" href="https://wa.me/573138855754?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20programa%20de%20Barber%C3%ADa%20y%20mi%20primera%20clase%20GRATIS" target="_blank" rel="noopener">Quiero Barbería</a>
+        </div>
+      </article>
+
+      <article class="prog">
+        <img src="assets/manicure.jpg" alt="Programa de Manicure y Pedicure en Velari: realza tu belleza con estilo" width="720" height="788" loading="lazy">
+        <div class="prog-body">
+          <h3 class="gold-text">Manicure y Pedicure</h3>
+          <ul class="ticks">
+            <li>Uñas acrílicas</li>
+            <li>Esmaltado semipermanente</li>
+            <li>Técnica dual</li>
+            <li>Decoración de uñas</li>
+            <li>Manicure y pedicure profesional</li>
+          </ul>
+          <div class="meta"><span class="chip">6 a 8 meses con 2 clases por semana</span><span class="chip">Clases de 4 horas</span></div>
+          <a class="btn btn-gold" href="https://wa.me/573138855754?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20programa%20de%20Manicure%20y%20Pedicure%20y%20mi%20primera%20clase%20GRATIS" target="_blank" rel="noopener">Quiero Manicure</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="precios">
+    <div class="sec-head">
+      <div class="eyebrow">Precios claros</div>
+      <h2 class="gold-text">Elige el horario que mejor te queda</h2>
+      <p class="lead">Mismo programa, tres formas de cursarlo. Sin letra pequeña: aquí está lo que pagas cada mes y la matrícula.</p>
+    </div>
+
+    <div class="plans">
+      <article class="plan hl">
+        <span class="tag">El precio del anuncio</span>
+        <h3>1 vez por semana</h3>
+        <div class="when">Una clase de 4 horas a la semana. Duración de 10 a 16 meses.</div>
+        <div class="price gold-text">$150.000 <small>/ mes</small></div>
+        <div class="mat"><span>Matrícula</span><b>$200.000</b></div>
+      </article>
+      <article class="plan">
+        <h3>Entre semana</h3>
+        <div class="when">2 clases por semana de 4 horas. Aprendes más rápido.</div>
+        <div class="price gold-text">$250.000 <small>/ mes</small></div>
+        <div class="mat"><span>Matrícula</span><b>$199.000</b></div>
+      </article>
+      <article class="plan">
+        <h3>Fines de semana</h3>
+        <div class="when">Sábado y domingo, 4 horas cada día.</div>
+        <div class="price gold-text">$250.000 <small>/ mes</small></div>
+        <div class="mat"><span>Matrícula</span><b>$249.000</b></div>
+      </article>
+    </div>
+
+    <div class="clear"><b>Para que nadie se lleve una sorpresa:</b> los $150.000 al mes corresponden a venir 1 vez por semana. Si vienes 2 veces por semana, la mensualidad es de $250.000.</div>
+
+    <div class="extras">
+      <span class="chip">Uniforme de regalo</span>
+      <span class="chip">Carnet $30.000</span>
+      <span class="chip">Separa tu cupo con $100.000</span>
+      <span class="chip">Paga con Addi o Sistecrédito</span>
+    </div>
+  </section>
+
+  <section id="empezar">
+    <div class="sec-head">
+      <div class="eyebrow">Cómo empezar</div>
+      <h2 class="gold-text">Tres pasos y ya estás adentro</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div><h3>Escríbenos</h3><p>Cuéntanos qué quieres aprender por WhatsApp. Te respondemos y te ayudamos a escoger horario.</p></div></div>
+      <div class="step"><div><h3>Ven a tu clase gratis</h3><p>Conoce la sede y a los profes, y practica con nosotros. Sin compromiso.</p></div></div>
+      <div class="step"><div><h3>Separa tu cupo</h3><p>Si te gustó, separa tu cupo con $100.000 y empiezas con tu grupo.</p></div></div>
+    </div>
+    <img class="gratis-img" src="assets/gratis.jpg" alt="Tu primera clase es gratis en Velari Bosa, cerca del C.C. Gran Plaza Bosa" width="900" height="900" loading="lazy">
+  </section>
+
+  <section id="sede">
+    <div class="sec-head">
+      <div class="eyebrow">La sede</div>
+      <h2 class="gold-text">Estamos en Bosa, a pasos del Gran Plaza</h2>
+    </div>
+    <div class="sede">
+      <img src="assets/salon.jpg" alt="Salón de clases de Velari Bosa con puestos de barbería y mesas de trabajo" width="640" height="1138" loading="lazy">
+      <div class="info">
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.100 7-11.500A7 7 0 0 0 5 9.500C5 14.900 12 21 12 21Z"/><circle cx="12" cy="9.500" r="2.500"/></svg>
+          <div><b>Dirección</b>Calle 65J Sur # 78L-7 Sur, Bosa, Bogotá<br>Cerca del C.C. Gran Plaza Bosa</div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><b>Horario</b>Lunes a domingo<br>8:00 a. m. a 7:00 p. m.</div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.800 7L4 20l1.200-4.600A8 8 0 1 1 21 12Z"/></svg>
+          <div><b>WhatsApp</b>313 885 5754</div>
+        </div>
+        <div class="cta-row" style="justify-content:flex-start;margin:6px 0 0">
+          <a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&amp;query=Calle+65J+Sur+78L-7+Sur+Bogot%C3%A1" target="_blank" rel="noopener">Abrir en Google Maps</a>
+          <a class="btn btn-line" href="https://wa.me/573138855754?text=Hola%2C%20%C2%BFme%20pueden%20enviar%20el%20video%20de%20c%C3%B3mo%20llegar%20a%20Velari%20Bosa%3F" target="_blank" rel="noopener">Pedir video de cómo llegar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="redes">
+    <div class="sec-head">
+      <div class="eyebrow">Síguenos</div>
+      <h2 class="gold-text">Mira cómo se vive una clase</h2>
+    </div>
+    <div class="socials">
+      <a class="social" href="https://www.instagram.com/academiadebellezavelari/" target="_blank" rel="noopener"><b>Instagram</b><span>@academiadebellezavelari</span></a>
+      <a class="social" href="https://www.tiktok.com/@academiadebellezabosav" target="_blank" rel="noopener"><b>TikTok</b><span>@academiadebellezabosav</span></a>
+      <a class="social" href="https://www.facebook.com/profile.php?id=61595914817972" target="_blank" rel="noopener"><b>Facebook</b><span>Academia de Belleza BOSA</span></a>
+    </div>
+  </section>
+
+  <footer>
+    <img class="f-logo" src="assets/logo.png" alt="Velari" width="150" height="136" loading="lazy">
+    <p><b style="color:var(--gold-hi)">Velari SAS</b> · NIT 901932106-1</p>
+    <p>Licencia de funcionamiento Res. 19-026 de 2026 · Registro de programas Res. 19-027</p>
+    <p>Sede Bosa · Bogotá, Colombia</p>
+  </footer>
+</div>
+
+<div class="dock">
+  <a class="btn btn-gold" href="https://wa.me/573138855754?text=Hola%2C%20quiero%20agendar%20mi%20primera%20clase%20GRATIS%20en%20Velari%20Bosa" target="_blank" rel="noopener">Agenda tu clase GRATIS por WhatsApp</a>
+</div>
